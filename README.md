@@ -1,5 +1,17 @@
 # My Urban Scoot - Prueba Técnica
 
+## 🚀 Inicio Rápido
+
+1. Clona el repositorio:
+```bash
+git clone https://github.com/MiquelRoca18/pruebaTecnicaMyUrbanScooter.git
+```
+
+2. Navega al directorio del proyecto:
+```bash
+cd pruebaTecnicaMyUrbanScooter
+```
+
 ## 📦 Estructura del Proyecto
 
 El proyecto está dividido en dos partes principales:
