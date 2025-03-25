@@ -9,24 +9,6 @@ Antes de comenzar, asegúrate de tener instalado:
 - Redis (versión 6 o superior)
 - npm o yarn
 
-### Instalación de Redis
-
-Si no tienes Redis instalado:
-
-**macOS (usando Homebrew):**
-```bash
-brew install redis
-```
-
-**Ubuntu/Debian:**
-```bash
-sudo apt-get update
-sudo apt-get install redis-server
-```
-
-**Windows:**
-Descarga Redis desde [https://redis.io/download/](https://redis.io/download/)
-
 ## 🚀 Inicio Rápido
 
 1. Clona el repositorio:
@@ -86,18 +68,6 @@ npm install
      ```bash
      DATABASE_URL=postgres://localhost/pruebaTecnicaMyUrbanScoot
      ```
-
-5. Inicia Redis:
-   ```bash
-   # En macOS
-   brew services start redis
-   
-   # En Linux
-   sudo service redis-server start
-   
-   # En Windows
-   net start redis
-   ```
 
 6. Ejecuta las migraciones de la base de datos:
    ```bash
@@ -165,6 +135,8 @@ El proyecto se ha podido realizar en casi todos los aspectos, excepto en la visu
 En primer lugar, quise estructurar bien el backend y utilizar nombres adecuados, lo que me llevó a repetir varias veces el proceso de desarrollo. Además, no tenía claro si la mejor forma de construir el backend era directamente desde el dashboard o mediante código. Para asegurarme, decidí implementarlo todo con código.
 
 Por otro lado, en el frontend, al visualizar los patinetes, pensaba que la configuración en el backend era correcta, pero me faltaba cambiar el estado de los productos para que se mostraran públicamente. Esto me hizo perder bastante tiempo, ya que no era consciente de que solo necesitaba modificar ese detalle. Afortunadamente, la integración del frontend con el backend, incluyendo aspectos como CORS, no me ha generado demasiados problemas.
+
+Para finalizar, es importante destacar la mala práctica de mostrar los patinetes utilizando el token de autenticación del administrador. Durante el desarrollo del proyecto, solo yo podía verlos, pero al descargarlo desde el repositorio, nadie más podía acceder a ellos. Cuando me di cuenta del problema, ya tenía muy poco tiempo para solucionarlo.
 
 En resumen, ha sido un proyecto que he disfrutado desarrollar, a pesar de algunos momentos de frustración. No conocía este framework hasta que vi la oferta de vuestra empresa, y me ha parecido una herramienta muy interesante. Con tan solo unos pocos días de trabajo, parece que se pueden lograr grandes cosas con él.
 
