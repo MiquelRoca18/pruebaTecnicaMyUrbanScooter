@@ -1,5 +1,32 @@
 # My Urban Scoot - Prueba Técnica
 
+## 📋 Requisitos Previos
+
+Antes de comenzar, asegúrate de tener instalado:
+
+- Node.js (versión 18 o superior)
+- PostgreSQL (versión 14 o superior)
+- Redis (versión 6 o superior)
+- npm o yarn
+
+### Instalación de Redis
+
+Si no tienes Redis instalado:
+
+**macOS (usando Homebrew):**
+```bash
+brew install redis
+```
+
+**Ubuntu/Debian:**
+```bash
+sudo apt-get update
+sudo apt-get install redis-server
+```
+
+**Windows:**
+Descarga Redis desde [https://redis.io/download/](https://redis.io/download/)
+
 ## 🚀 Inicio Rápido
 
 1. Clona el repositorio:
@@ -36,6 +63,10 @@ npm install
 3. Configura la base de datos PostgreSQL:
 - Crea una base de datos llamada `pruebaTecnicaMyUrbanScoot`
 - Asegúrate de que PostgreSQL esté corriendo en el puerto por defecto
+- Copia el archivo `.env.template` a `.env` y configura las variables de entorno:
+```bash
+cp .env.template .env
+```
 
 4. Inicia Redis:
 ```bash
@@ -44,8 +75,6 @@ redis-server
 
 5. Inicia el servidor de desarrollo:
 ```bash
-yarn start
-# o
 npm run start
 ```
 
@@ -63,7 +92,12 @@ cd prueba-tecnica-my-urban-scoot-storefront
 npm install
 ```
 
-3. Inicia el servidor de desarrollo:
+3. Copia el archivo `.env.template` a `.env.local` y configura las variables de entorno:
+```bash
+cp .env.template .env.local
+```
+
+4. Inicia el servidor de desarrollo:
 ```bash
 npm run dev
 ```
@@ -74,12 +108,24 @@ El frontend estará disponible en `http://localhost:3000`
 
 El panel de administración está disponible en `http://localhost:9000/app`
 
-Sin querer me he registrado con mi crreo y contraseña importantes entonces me da un poco de respeto compartir la contraseña
+Sin querer me he registrado con mi correo y contraseña importantes entonces me da un poco de respeto compartir la contraseña.
+
 Puedo volver a hacer en otro momento la parte del backend otra vez con esto en cuenta si lo necesitas
 
 ## 🎥 Demo del Proyecto
 
 [Enlace al video de demostración](https://drive.google.com/file/d/146XuLsocIRDHQrIt8L3gOFWyQaK-cMBx/view)
+
+## ⚠️ Solución de Problemas
+
+Si encuentras errores relacionados con la base de datos:
+1. Asegúrate de que PostgreSQL está corriendo
+2. Verifica que la base de datos `pruebaTecnicaMyUrbanScoot` existe
+3. Comprueba que las credenciales en el archivo `.env` son correctas
+
+Si encuentras errores relacionados con Redis:
+1. Asegúrate de que Redis está instalado y corriendo
+2. Verifica que el puerto 6379 está disponible
 
 ## Conclusiones
 El proyecto se ha podido realizar en casi todos los aspectos, excepto en la visualización del precio. No estoy seguro de si falta algo más. Es posible que haya mejores prácticas para su implementación, pero en general, se han cumplido casi todos los requisitos.
