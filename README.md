@@ -61,19 +61,34 @@ npm install
 ```
 
 3. Configura la base de datos PostgreSQL:
-- Crea una base de datos llamada `pruebaTecnicaMyUrbanScoot`
-- Asegúrate de que PostgreSQL esté corriendo en el puerto por defecto
-- Copia el archivo `.env.template` a `.env` y configura las variables de entorno:
+```bash
+# Inicia PostgreSQL (si no está corriendo)
+# En macOS:
+brew services start postgresql
+
+# En Ubuntu/Debian:
+sudo service postgresql start
+
+# Crea la base de datos
+createdb pruebaTecnicaMyUrbanScoot
+```
+
+4. Configura las variables de entorno:
+- En el backend, copia el archivo `.env.template` a `.env`:
 ```bash
 cp .env.template .env
 ```
+- Edita el archivo `.env` y asegúrate de que las credenciales de la base de datos coincidan con tu configuración:
+```
+DATABASE_URL=postgres://localhost/pruebaTecnicaMyUrbanScoot
+```
 
-4. Inicia Redis:
+5. Inicia Redis:
 ```bash
 redis-server
 ```
 
-5. Inicia el servidor de desarrollo:
+6. Inicia el servidor de desarrollo:
 ```bash
 npm run start
 ```
@@ -84,7 +99,7 @@ El backend estará disponible en `http://localhost:9000`
 
 1. Navega al directorio del frontend:
 ```bash
-cd prueba-tecnica-my-urban-scoot-storefront
+cd ../prueba-tecnica-my-urban-scoot-storefront
 ```
 
 2. Instala las dependencias:
@@ -92,9 +107,10 @@ cd prueba-tecnica-my-urban-scoot-storefront
 npm install
 ```
 
-3. Copia el archivo `.env.template` a `.env.local` y configura las variables de entorno:
-```bash
-cp .env.template .env.local
+3. Configura las variables de entorno:
+- Crea un archivo `.env.local` en el directorio del frontend con el siguiente contenido:
+```
+NEXT_PUBLIC_MEDUSA_BACKEND_URL=http://localhost:9000
 ```
 
 4. Inicia el servidor de desarrollo:
