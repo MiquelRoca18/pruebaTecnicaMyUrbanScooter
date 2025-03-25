@@ -60,40 +60,56 @@ cd pruebaTecnicaMyUrbanScoot
 npm install
 ```
 
-3. Configura la base de datos PostgreSQL:
-```bash
-# Inicia PostgreSQL (si no está corriendo)
-# En macOS:
-brew services start postgresql
-
-# En Ubuntu/Debian:
-sudo service postgresql start
-
-# Crea la base de datos
-createdb pruebaTecnicaMyUrbanScoot
-```
+3. Configura PostgreSQL:
+   - Inicia el servicio de PostgreSQL:
+     ```bash
+     # En macOS
+     brew services start postgresql
+     
+     # En Linux
+     sudo service postgresql start
+     
+     # En Windows
+     net start postgresql
+     ```
+   - Crea la base de datos:
+     ```bash
+     createdb pruebaTecnicaMyUrbanScoot
+     ```
 
 4. Configura las variables de entorno:
-- En el backend, copia el archivo `.env.template` a `.env`:
-```bash
-cp .env.template .env
-```
-- Edita el archivo `.env` y asegúrate de que las credenciales de la base de datos coincidan con tu configuración:
-```
-DATABASE_URL=postgres://localhost/pruebaTecnicaMyUrbanScoot
-```
+   - Copia el archivo `.env.template` a `.env`:
+     ```bash
+     cp .env.template .env
+     ```
+   - Edita el archivo `.env` con tus credenciales de base de datos:
+     ```bash
+     DATABASE_URL=postgres://localhost/pruebaTecnicaMyUrbanScoot
+     ```
 
 5. Inicia Redis:
-```bash
-redis-server
-```
+   ```bash
+   # En macOS
+   brew services start redis
+   
+   # En Linux
+   sudo service redis-server start
+   
+   # En Windows
+   net start redis
+   ```
 
-6. Inicia el servidor de desarrollo:
-```bash
-npm run start
-```
+6. Ejecuta las migraciones de la base de datos:
+   ```bash
+   npx medusa db:migrate
+   ```
 
-El backend estará disponible en `http://localhost:9000`
+7. Inicia el servidor de desarrollo:
+   ```bash
+   npm run dev
+   ```
+
+El backend estará disponible en http://localhost:9000
 
 ### Frontend 
 
